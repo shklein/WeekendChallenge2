@@ -53,9 +53,5 @@ $('.box').eq(currentPerson).addClass('blue');
 
 }
 
-function getBox() {
-  var number = currentPerson;
-  $('.' + muCohort[number]).addClass('blue');
- }
 
 });
