@@ -19,9 +19,9 @@ $('.next').on('click', function (){
   currentPerson++;
   if (currentPerson > muCohort.length - 1) {
     currentPerson = 0;
+  }
     $('.box').removeClass('blue');
 $('.box').eq(currentPerson).addClass('blue');
-  }
 
   getMu();
 
@@ -36,6 +36,8 @@ $('.previous').on('click', function (){
   if (currentPerson < 0) {
     currentPerson = muCohort.length - 1;
   }
+  $('.box').removeClass('blue');
+$('.box').eq(currentPerson).addClass('blue');
   getMu();
   //getBox();
 });
