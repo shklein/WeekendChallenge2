@@ -15,12 +15,12 @@ $(document).ready(function(){
 });
 //Advances index
 $('.next').on('click', function (){
-  var $bl = $('#' + currentPerson);
-  $bl.css('background-color','blue');
   $(this).parent().find('.person').empty();
   currentPerson++;
   if (currentPerson > muCohort.length - 1) {
     currentPerson = 0;
+    $('.box').removeClass('blue');
+$('.box').eq(currentPerson).addClass('blue');
   }
 
   getMu();
