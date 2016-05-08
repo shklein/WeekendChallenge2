@@ -8,7 +8,6 @@ $(document).ready(function(){
                 muCohort = data.mu;
                 console.log(data);
                 getMu();
-                //getBox();
 
               }
 
@@ -39,7 +38,7 @@ $('.previous').on('click', function (){
   $('.box').removeClass('blue');
 $('.box').eq(currentPerson).addClass('blue');
   getMu();
-  //getBox();
+
 });
 
 //Append info function
