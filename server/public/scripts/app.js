@@ -6,23 +6,27 @@ $(document).ready(function(){
       url: "/data",
       success: function(data){
                 muCohort = data.mu;
+                console.log(data);
                 getMu();
+                //getBox();
+
               }
 
 });
 //Advances index
-//var $bl = $('.box');
-//$bl.data('index', muCohort[i]);
 $('.next').on('click', function (){
+  var $bl = $('#' + currentPerson);
+  $bl.css('background-color','blue');
   $(this).parent().find('.person').empty();
   currentPerson++;
   if (currentPerson > muCohort.length - 1) {
     currentPerson = 0;
   }
+
   getMu();
-  //if ($bl.data('index') === currentPerson) {
-    //$bl.css('background-color', 'navy');
-  //}
+
+
+
 
 });
 //Retreats index
@@ -33,18 +37,23 @@ $('.previous').on('click', function (){
     currentPerson = muCohort.length - 1;
   }
   getMu();
+  //getBox();
 });
 
 //Append info function
     function getMu() {
       var $el = $('.person')
       var mcp = muCohort[currentPerson];
+
     $el.append('<h2>' + mcp.name + '</h2>');
     $el.append('<p>' + mcp.git_username + '</p>');
     $el.append('<p>' + mcp.shoutout + '</p>');
 
 }
 
-
+function getBox() {
+  var number = currentPerson;
+  $('.' + muCohort[number]).addClass('blue');
+ }
 
 });
